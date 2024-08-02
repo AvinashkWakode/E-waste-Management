@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url("/images/background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .heading {
+            width: 100%;
+            height: 130px;
+            text-shadow: 10px 18px 18px rgb(221, 217, 217);
+            color: white;
+            background: rgba(188, 207, 17, 0);
+            padding: 15px;
+        }
+        .heading h1 {
+            text-shadow: 10px 18px 18px black;
+            color: white;
+        }
+        
+        .form {
+            position: absolute;
+            top: 20px; /* Position it at the top of the container */
+            right: 20px; /* Align it to the right */
+        }
+        .form ul {
+            list-style: none;
+            display: flex; /* Align items horizontally */
+        }
+        .form li {
+            margin: 0 10px; /* Space between items */
+            padding: 10px;
+        }
+        .form a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+        }
+        .form li:hover {
+            background: rgba(21, 226, 10, 0.445);
+            text-decoration: underline;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.65); 
+            color: white;
+            text-align: center;
+            padding: 8px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+        /* Dashboard CSS */
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 250px;
+        }
+        .dashboard-item {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 8px;
+            border-radius: 110px;
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .dashboard-item h2 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .dashboard-item p {
+            font-size: 26px;
+            margin: 0;
+        }
+        /* Marquee CSS */
+        .marquee-container {
+            margin-bottom:10px;
+            background: rgba(0, 0, 0, 0); 
+            color: rgb(255, 255, 255);
+            
+        }
+        marquee {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>E-Waste Management</h1>
+        </div>
+        <div class="form">
+            <ul>
+                <li><a href="/employees/new">Login</a></li>
+                <li><a href="/reg">Registration</a></li>
+                <li><a href="/">Help</a></li>
+            </ul>
+        </div>
+        <!-- Marquee Section -->
+        <div class="marquee-container">
+            <marquee id="tagline"></marquee>
+        </div>
+        <!-- Dashboard Section -->
+        <div class="dashboard">
+            <div class="dashboard-item">
+                <h2>Total Customer</h2>
+                <p>6760</p>
+            </div>
+            <div class="dashboard-item">
+                <h2>Total Sellar</h2>
+                <p>342</p>
+            </div>
+            <div class="dashboard-item">
+                <h2>Todays Visitors</h2>
+                <p>41</p>
+            </div>
+            <div class="dashboard-item">
+                <h2>Available Latops</h2>
+                <p>5347</p>
+            </div>
+            <div class="dashboard-item">
+                <h2>Available Mobile</h2>
+                <p>220</p>
+            </div>
+            <div class="dashboard-item">
+                <h2>Available Other Items</h2>
+                <p>3</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>copyrights © 2024 E-Waste Management Developed by The Task Manager Team</p>
+    </div>
+    <script>
+        const taglines = [
+            "Reduce, Reuse, Recycle.",
+            "Manage E-Waste for a Better Tomorrow.",
+            "E-Waste Management - Your Green Partner.",
+            "Sustainable Solutions for E-Waste.",
+            "Join the E-Waste Revolution!"
+        ];
+        let currentTaglineIndex = 0;
+        const taglineElement = document.getElementById('tagline');
+
+        function updateTagline() {
+            taglineElement.textContent = taglines[currentTaglineIndex];
+            currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
+        }
+
+        updateTagline();
+        setInterval(updateTagline, 5000);
+    </script>
+</body>
+</html>
